@@ -1,0 +1,50 @@
+---
+title: "klad"
+author: "Ruben Bakker"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+# Install renv first for reproducibility
+install.packages("renv")
+renv::init()
+
+# Bioconductor
+install.packages("BiocManager")
+BiocManager::install(c(
+  "curatedPCaData",
+  "MultiAssayExperiment",
+  "WGCNA",
+  "DESeq2",
+  "limma"
+))
+
+# CRAN packages
+install.packages(c(
+  "tidyverse",
+  "survival",
+  "survminer",
+  "glmnet",
+  "ggplot2",
+  "pheatmap",
+  "quarto"
+))
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
